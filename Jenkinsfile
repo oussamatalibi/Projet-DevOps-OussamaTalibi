@@ -16,15 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('devops-pipeline-app') {
-                    sh 'mvn clean package'
-                }
+                sh 'mvn clean package'
             }
         }
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'devops-pipeline-app/target/*.jar'
+                archiveArtifacts artifacts: 'target/*.jar'
             }
         }
     }
