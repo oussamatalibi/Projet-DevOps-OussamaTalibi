@@ -29,10 +29,18 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline executed successfully'
+            slackSend(
+                channel: '#jenkins-notifications',
+                color: 'good',
+                message: "✅ Jenkins Pipeline SUCCESS: PipeLine-OussamaTalibi"
+            )
         }
         failure {
-            echo 'Pipeline failed'
+            slackSend(
+                channel: '#jenkins-notifications',
+                color: 'danger',
+                message: "❌ Jenkins Pipeline FAILED: PipeLine-OussamaTalibi"
+            )
         }
     }
 }
