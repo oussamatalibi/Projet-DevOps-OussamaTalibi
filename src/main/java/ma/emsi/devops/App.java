@@ -10,6 +10,6 @@ public class App
 
 
     {
-        System.out.println("CI/CD avec GitHub Actions et Jenkins");;
+        System.out.println("CI/CD avec GitHub Actions et Jenkins
     }
 }
